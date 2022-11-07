@@ -87,66 +87,8 @@ enum {
  
  
 
-
-
-
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 217 "act/comthink.h"
 
-
-
-
- 
- 
- 
-
-
- 
- 
- 
-
-
- 
- 
- 
-
-
- 
- 
- 
-
-
- 
- 
- 
-
-
-
-
-
-
-
- 
- 
  
  
  
@@ -302,21 +244,7 @@ typedef	struct {
 
 # 1 "act/enmlevel.dat" 1
  
- 
- 
- 
- 
- 
- 
- 
 
-
-
-
-
-
- 
- 
  
  
  
@@ -1357,43 +1285,6 @@ COMLVL *com_level[] = {
 
 # 1 "act/training.h" 1
  
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1401,9 +1292,7 @@ COMLVL *com_level[] = {
 
 
 # 1 "act/act_def.h" 1
- 
- 
- 
+
  
  
  
@@ -1417,41 +1306,14 @@ COMLVL *com_level[] = {
  
  
  
- 
- 
- 
- 
- 
-
-
-
- 
+  
  
  
 extern	PAD		pad[2];
 
 extern	UINT16 	**cmd_standard[];			 
  
-
- 
- 
-
 extern	FIXED 	act_range_rev_dat[];
-
-
-
-
-
-
-
-
-
- 
- 
-
- 
-
-
 
 
 
@@ -1463,23 +1325,11 @@ Uint8	act_adr_cng_flg[2];
 
 
 
-
-
-
  
 # 35 "act/act.c" 2
 
 # 1 "act/act_com.h" 1
  
- 
- 
- 
- 
- 
- 
-
-
-
 
 
 extern	void com_init(UINT8 plyr);
@@ -1537,27 +1387,11 @@ extern	UINT8 com_personal_act(void);
 # 156 "act/act_com.h"
 
 
-
-
-
-
-
-
-
-
  
 # 36 "act/act.c" 2
 
 # 1 "act/act_work.h" 1
  
- 
- 
- 
- 
- 
- 
-
-
  
  
  
@@ -1570,17 +1404,6 @@ extern	UINT8	*key_tbl;
 extern	UINT8	newsw_buf[2 ][0x80 ];	 
 extern	UINT8	onsw_buf[2 ][0x80 ];	 
 extern	UINT8	lonsw_buf[2 ][0x80 ];	 
-
-
-
-
-
-
-
-
-
-
-
 
 
 
