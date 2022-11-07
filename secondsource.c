@@ -1515,11 +1515,11 @@ void *mot_tn180[] = {
 	};
 
                                        
-				 n;					/* 復元力による変化量					*/
-	INT		tmp_int;				/* 汎用作業用ﾜ-ｸ(int)					*/
+				 n;						/* 復元力による変化量					*/
+	INT		tmp_int;					/* 汎用作業用ﾜ-ｸ(int)				*/
 
 
-	if (chi_stop_flg[ply_no] == OFF) {			/* ｽﾄｯﾌﾟﾌﾗｸﾞがｸﾘｱの時		*/
+	if (chi_stop_flg[ply_no] == OFF) {			/* ｽﾄｯﾌﾟﾌﾗｸﾞがｸﾘｱの時			*/
 		move	= get_del_point_move(chi_dat_p);/* 親の移動による変化量		*/
 		gravi	= get_gravi_point(chi_dat_p);	/* 重力による変化量			*/
 	}
@@ -1528,21 +1528,21 @@ void *mot_tn180[] = {
 		gravi	= 0;							/* 							*/
 	}
 
-	if (chi_dat_p->del_point_bk > 0) {			/* おっぱいが進んでいるとき	*/
+	if (chi_dat_p->del_point_bk > 0) {			/* おっぱいが進んでいるとき		*/
 		tmp_int	= get_gen_point(chi_dat_p);		/* 自然減速による変化量		*/
 
-		switch (chi_stop_flg[ply_no]) {			/* 外部からの強制停止処理	*/
+		switch (chi_stop_flg[ply_no]) {			/* 外部からの強制停止処理		*/
 			case 1 :							/* 通常停止					*/
 			case 2 : {							/* ﾚﾍﾞﾙ2					*/
-				tmp_int <<= 1;					/* 減速値を2倍にする		*/
+				tmp_int <<= 1;					/* 減速値を2倍にする			*/
 				break;
 			}
 			case 3 : {							/* ﾚﾍﾞﾙ3					*/
-				tmp_int += (tmp_int >> 1);		/* 減速値を1.5倍にする		*/
+				tmp_int += (tmp_int >> 1);		/* 減速値を1.5倍にする			*/
 				break;
 			}
 			case 4 : {							/* ﾚﾍﾞﾙ4					*/
-				tmp_int += (tmp_int << 1);		/* 減速値を3倍にする		*/
+				tmp_int += (tmp_int << 1);		/* 減速値を3倍にする			*/
 				break;
 			}
 			default : {
@@ -1551,22 +1551,22 @@ void *mot_tn180[] = {
 		}
 
 		chi_dat_p->del_point	= chi_dat_p->del_point_bk
-								+ move			/* 移動による変化量を加味	*/
+								+ move			/* 移動による変化量を加味		*/
 								+ gravi			/* 重力変化量				*/
-								- tmp_int;		/* 自然減速を加味			*/
+								- tmp_int;		/* 自然減速を加味				*/
 	}
-	else {										/* おっぱいが戻るとき		*/
-		tmp_int = get_recon_point(chi_dat_p);	/* 復元力による変化量		*/
+	else {										/* おっぱいが戻るとき			*/
+		tmp_int = get_recon_point(chi_dat_p);	/* 復元力による変化量			*/
 
-		switch (chi_stop_flg[ply_no]) {			/* 外部からの強制停止処理	*/
+		switch (chi_stop_flg[ply_no]) {			/* 外部からの強制停止処理		*/
 			case 2 : 							/* ﾚﾍﾞﾙ2					*/
 			case 3 : {							/* ﾚﾍﾞﾙ3					*/
-				tmp_int	= (tmp_int >> 2)		/* 復元力を3/4倍にする		*/
+				tmp_int	= (tmp_int >> 2)		/* 復元力を3/4倍にする			*/
 						+ (tmp_int >> 1);		/* 							*/
 				break;
 			}
 			case 4 : {							/* ﾚﾍﾞﾙ4					*/
-				tmp_int	= tmp_int >> 2;			/* 復元力を1/4倍にする		*/
+				tmp_int	= tmp_int >> 2;			/* 復元力を1/4倍にする			*/
 				break;
 			}
 			default : {
@@ -1575,13 +1575,13 @@ void *mot_tn180[] = {
 		}
 
 		chi_dat_p->del_point	= chi_dat_p->del_point_bk
-								+ move			/* 移動による変化量を加味	*/
+								+ move			/* 移動による変化量を加味		*/
 								+ gravi			/* 重力変化量				*/
 								- tmp_int;		/* 復元力を加味				*/
 	}
 
 	if		(chi_dat_p->del_point >  CHI_DEL_MAX_LIM)
-		chi_dat_p->del_point =  CHI_DEL_MAX_LIM;	/* ﾎﾟｲﾝﾄ変化量のﾘﾐｯﾀ-	*/
+		chi_dat_p->del_point =  CHI_DEL_MAX_LIM;	/* ﾎﾟｲﾝﾄ変化量のﾘﾐｯﾀ-		*/
 	else if	(chi_dat_p->del_point < -CHI_DEL_MAX_LIM)
 		chi_dat_p->del_point = -CHI_DEL_MAX_LIM;	/* 						*/
 
@@ -1626,8 +1626,8 @@ void	change_chi_angle(
 		*move_ang_p &= 0xC000;					/* がそのまま反映			*/
 	}
 	else {
-		*move_ang_p += 0x8000;					/* 移動方向は+180度			*/
-		*move_ang_p &= 0xC000;					/* 							*/
+		*move_ang_p += 0x8000;					/* 移動方向は+180度		*/
+		*move_ang_p &= 0xC000;					/* 						*/
 	}
 
 }/* change_chi_angle */
@@ -1665,37 +1665,37 @@ FIXED	get_chi_obj_no(
 	angle	= chi_dat_p->move_angle & 0x8000;	/* 移動方向を2方向ｲﾝﾃﾞｯｸｽ化	*/
 	angle	= chi_dat_p->move_angle >> 15;		/* 							*/
 
-//	point = chi_dat_p->obj_point;				/* 乳ﾎﾟｲﾝﾄを0-30までの		*/
-//	point = point >> POINT_OBJ;					/* ｲﾝﾃﾞｯｸｽにする			*/
+//	point = chi_dat_p->obj_point;				/* 乳ﾎﾟｲﾝﾄを0-30までの			*/
+//	point = point >> POINT_OBJ;					/* ｲﾝﾃﾞｯｸｽにする				*/
 //	if		(point > (MAX_OBJ - 1))				/* 							*/
 //		point = (MAX_OBJ - 1);					/* 							*/
 //	else if (point < 0)							/* 							*/
 //		point = 0;								/* 							*/
 
 //	chi_dat_p->obj_no = *(*(chi_obj_no_tbl + angle) + point);
-												/* 移動方向とﾎﾟｲﾝﾄより		*/
-												/* ｵﾌﾞｼﾞｪｸﾄﾅﾝﾊﾞ-を求める	*/
+												/* 移動方向とﾎﾟｲﾝﾄより			*/
+												/* ｵﾌﾞｼﾞｪｸﾄﾅﾝﾊﾞ-を求める		*/
 
 	rvalue	= (FIXED)((chi_dat_p->obj_point<<4)	/* ﾎﾟｲﾝﾄ値0xFFの時､移動値は	*/
 			+ 0x0F);							/* 0.0625(=0x00000FFF)		*/
 
-	if (angle) {								/* 移動が上方向の時は		*/
-		rvalue	= -rvalue;						/* 移動値を正負反転させる	*/
+	if (angle) {								/* 移動が上方向の時は			*/
+		rvalue	= -rvalue;						/* 移動値を正負反転させる		*/
 	}											/* 							*/
 
 	return(rvalue);
 
-}/*	get_chi_obj_no()	*/
+}												/*	get_chi_obj_no()	*/
 
 
 /******************************************************/
 /***												***/
-/***	機能	: 重力によるﾎﾟｲﾝﾀの変化量算出		***/
+/***	機能	: 重力によるﾎﾟｲﾝﾀの変化量算出			***/
 /***												***/
 /***	作成日	: H8.3.1							***/
 /***	作成者	: JUN								***/
 /***												***/
-/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_gravi_point(			***/
+/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_gravi_point(				***/
 /***						struct chi_dat			***/
 /***							*chi_dat_p			***/
 /***					);							***/
@@ -1724,17 +1724,17 @@ INT		get_gravi_point(
 
 	return(rvalue);
 
-}/* get_gravi_point */
+}												/* get_gravi_point */
 
 
 /******************************************************/
 /***												***/
-/***	機能	: 減速によるﾎﾟｲﾝﾀの変化量算出		***/
+/***	機能	: 減速によるﾎﾟｲﾝﾀの変化量算出			***/
 /***												***/
 /***	作成日	: H8.3.1							***/
 /***	作成者	: JUN								***/
 /***												***/
-/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_gen_point(				***/
+/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_gen_point(					***/
 /***						struct chi_dat			***/
 /***							*chi_dat_p			***/
 /***					);							***/
@@ -1759,8 +1759,8 @@ INT		get_gen_point(
 		obj_point = MAX_POINT;					/* 							*/
 	obj_point >>= 4;							/* 							*/
 
-	rvalue										/* 現在の乳ﾎﾟｲﾝﾀ			*/
-		= *(chi_dat_p->gensoku_p + obj_point);	/* 移動角より復元力を求める	*/
+	rvalue										/* 現在の乳ﾎﾟｲﾝﾀ				*/
+		= *(chi_dat_p->gensoku_p + obj_point);	/* 移動角より復元力を求める		*/
 
 	return(rvalue);
 
@@ -1788,9 +1788,9 @@ INT		get_recon_point(
 		)
 {
 
-	INT		obj_point;				/* ｵﾌﾞｼﾞｪｸﾄﾎﾟｲﾝﾄﾅﾝﾊﾞ-					*/
+	INT		obj_point;				/* ｵﾌﾞｼﾞｪｸﾄﾎﾟｲﾝﾄﾅﾝﾊﾞ-						*/
 	INT		rvalue;					/* 返り値								*/
-	long	index;					/* ﾃﾞ-ﾀ検索用ｲﾝﾃﾞｯｸｽ					*/
+	long	index;					/* ﾃﾞ-ﾀ検索用ｲﾝﾃﾞｯｸｽ						*/
 	long	angle;					/* 作業用角度変数						*/
 
 
@@ -1808,9 +1808,9 @@ INT		get_recon_point(
 		obj_point = MAX_POINT;					/* 							*/
 	obj_point >>= 4;							/* 							*/
 
-	index = angle << 4;							/* 現在の乳ﾎﾟｲﾝﾀ、移動角	*/
-	index += obj_point;							/* をｲﾝﾃﾞｯｸｽとして			*/
-	rvalue = *(chi_dat_p->recon_p + index);		/* 復元力を求める			*/
+	index = angle << 4;							/* 現在の乳ﾎﾟｲﾝﾀ、移動角		*/
+	index += obj_point;							/* をｲﾝﾃﾞｯｸｽとして				*/
+	rvalue = *(chi_dat_p->recon_p + index);		/* 復元力を求める				*/
 
 	return(rvalue);
 
@@ -1819,12 +1819,12 @@ INT		get_recon_point(
 
 /******************************************************/
 /***												***/
-/***	機能	: 入力ﾍﾞｸﾄﾙによるﾎﾟｲﾝﾀの変化量算出	***/
+/***	機能	: 入力ﾍﾞｸﾄﾙによるﾎﾟｲﾝﾀの変化量算出		***/
 /***												***/
 /***	作成日	: H8.3.1							***/
 /***	作成者	: JUN								***/
 /***												***/
-/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_del_point_move(			***/
+/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_del_point_move(				***/
 /***						struct chi_dat			***/
 /***							*chi_dat_p			***/
 /***					);							***/
@@ -1838,30 +1838,30 @@ INT		get_del_point_move(
 		)
 {
 
-	long	index;					/* ﾃﾞ-ﾀ検索用ｲﾝﾃﾞｯｸｽ					*/
-	FIXED	vec_cos;				/* 入力ﾍﾞｸﾄﾙのｺｻｲﾝ値					*/
+	long	index;					/* ﾃﾞ-ﾀ検索用ｲﾝﾃﾞｯｸｽ						*/
+	FIXED	vec_cos;				/* 入力ﾍﾞｸﾄﾙのｺｻｲﾝ値						*/
 	FIXED	rvalue;					/* 返り値								*/
 
 
 	/* 現在の移動角とﾍﾞｸﾄﾙの方向の差分を求める（８方向化）	*/
-	index	= chi_dat_p->move_angle				/* 現在の移動角とﾍﾞｸﾄﾙの	*/
-			- chi_dat_p->vec_angle;				/* 方向の差分を求める		*/
-	index	&= 0xE000;							/* (8方向化)				*/
+	index	= chi_dat_p->move_angle				/* 現在の移動角とﾍﾞｸﾄﾙの		*/
+			- chi_dat_p->vec_angle;				/* 方向の差分を求める			*/
+	index	&= 0xE000;							/* (8方向化)					*/
 //	index	>>= 13;								/* 							*/
 //	if		(index < 0)	index = 0;				/* 							*/
 //	else if	(index > 7)	index = 7;				/* 							*/
 
-//	vec_cos	= *(chi_vec_cos_tbl + index);		/* 求めた差分のCOS値を算出	*/
+//	vec_cos	= *(chi_vec_cos_tbl + index);		/* 求めた差分のCOS値を算出		*/
 
-//	rvalue										/* 入力ﾍﾞｸﾄﾙの長さと求めた	*/
-//		= (chi_dat_p->vec_length * vec_cos);	/* COS値により移動方向に	*/
-												/* かかる力のﾍﾞｸﾄﾙの長さを	*/
+//	rvalue										/* 入力ﾍﾞｸﾄﾙの長さと求めた		*/
+//		= (chi_dat_p->vec_length * vec_cos);	/* COS値により移動方向に		*/
+												/* かかる力のﾍﾞｸﾄﾙの長さを		*/
 												/* 求める					*/
 
-	if (index) {								/* 現在の移動角とﾍﾞｸﾄﾙが	*/
+	if (index) {								/* 現在の移動角とﾍﾞｸﾄﾙが		*/
 		rvalue	=  chi_dat_p->vec_length;		/* 同方向の時				*/
 	}											/* 							*/
-	else {										/* 現在の移動角とﾍﾞｸﾄﾙが	*/
+	else {										/* 現在の移動角とﾍﾞｸﾄﾙが		*/
 		rvalue	= -chi_dat_p->vec_length;		/* 逆方向の時				*/
 	}											/* 							*/
 
@@ -1874,7 +1874,7 @@ INT		get_del_point_move(
 
 /******************************************************/
 /***												***/
-/***	機能	: 乳ﾍﾞ-ｽ及び、乳頂点の座標算出		***/
+/***	機能	: 乳ﾍﾞ-ｽ及び、乳頂点の座標算出			***/
 /***												***/
 /***	作成日	: H8.12.05							***/
 /***	作成者	: JUN								***/
@@ -1896,7 +1896,7 @@ void	chi_pos_calc(
 
 	INT		i;						/* ﾙ-ﾌﾟ用変数							*/
 	INT		point_cnt;
-	Uint8	tmp_point_no;			/* 作業頂点ﾅﾝﾊﾞ-						*/
+	Uint8	tmp_point_no;			/* 作業頂点ﾅﾝﾊﾞ-							*/
 	Uint8	tmp_pos_index;			/* 作業頂点座標ﾃﾞ-ﾀｲﾝﾃﾞｯｸｽ				*/
 	FIXED	tmp_chi_pnt_dis;
 	void	*tmp_ptr;
@@ -1907,19 +1907,19 @@ void	chi_pos_calc(
 //	point_cnt	= chi_pnt_cnt_p[base_no];
 //	for (i = 0; i < point_cnt; i++) {
 	for (i = 0; i < chi_point_cnt_dat[base_no]; i++) {
-		tmp_point_no							/* 作業ﾍﾞ-ｽﾅﾝﾊﾞ-と供に動く	*/
-			= chi_point_no_dat[base_no][i];		/* ﾎﾟﾘｺﾞﾝ頂点ﾅﾝﾊﾞ-を求める	*/
+		tmp_point_no							/* 作業ﾍﾞ-ｽﾅﾝﾊﾞ-と供に動く		*/
+			= chi_point_no_dat[base_no][i];		/* ﾎﾟﾘｺﾞﾝ頂点ﾅﾝﾊﾞ-を求める		*/
 //		tmp_point_no
 //			= chi_pnt_no_p[base_no][i];
-//		tmp_chi_point_plane[tmp_point_no][X]	/* ﾎﾟﾘｺﾞﾝ頂点のX座標を更新	*/
+//		tmp_chi_point_plane[tmp_point_no][X]	/* ﾎﾟﾘｺﾞﾝ頂点のX座標を更新		*/
 //			= chi_point_dis[base_no][i][X]		/* 							*/
 //			+ chi_point[ply_no][base_no][X];	/* 							*/
-		tmp_chi_point_plane[tmp_point_no][Y]	/* ﾎﾟﾘｺﾞﾝ頂点のY座標を更新	*/
+		tmp_chi_point_plane[tmp_point_no][Y]	/* ﾎﾟﾘｺﾞﾝ頂点のY座標を更新		*/
 			= chi_point_dis[base_no][i][Y]		/* 							*/
 			+ chi_point[ply_no][base_no][Y];	/* 							*/
 //		tmp_chi_pnt_dis
 //			= chi_point_dis[base_no][i][Y];
-//		tmp_chi_point_plane[tmp_point_no][Y]	/* ﾎﾟﾘｺﾞﾝ頂点のY座標を更新	*/
+//		tmp_chi_point_plane[tmp_point_no][Y]	/* ﾎﾟﾘｺﾞﾝ頂点のY座標を更新		*/
 //			= tmp_chi_pnt_dis					/* 							*/
 //			+ chi_point[ply_no][base_no][Y];	/* 							*/
 	}
@@ -1955,7 +1955,7 @@ void	init_chi_dat(
 
 	void	**chi_tbl_ptr;			/* ﾀｲﾐﾝｸﾞﾃﾞ-ﾀ内乳ﾃﾞ-ﾀﾃ-ﾌﾞﾙﾎﾟｲﾝﾀ			*/
 	INT		*dat_ptr;				/* ﾀｲﾐﾝｸﾞﾃﾞ-ﾀ内乳ﾃﾞ-ﾀﾎﾟｲﾝﾀ				*/
-	INT		*ang_total_p;			/* 角度累計格納ｱﾄﾞﾚｽﾎﾟｲﾝﾀ				*/
+	INT		*ang_total_p;			/* 角度累計格納ｱﾄﾞﾚｽﾎﾟｲﾝﾀ					*/
 
 	struct chi_dat	*chi_dat_p;		/* 乳ﾃﾞ-ﾀﾎﾟｲﾝﾀ							*/
 
@@ -1970,7 +1970,7 @@ void	init_chi_dat(
 
 	chi_dat_p->char_no		= chr_no;			/* ｷｬﾗｸﾀ-ﾅﾝﾊﾞ-				*/
 
-	chi_dat_p->stop_flg		= OFF;				/* 外部からの強制停止ﾌﾗｸﾞ	*/
+	chi_dat_p->stop_flg		= OFF;				/* 外部からの強制停止ﾌﾗｸﾞ		*/
 
 	chi_dat_p->in_vec_x		= 0.0;				/* ﾜ-ﾙﾄﾞ系の入力Xﾍﾞｸﾄﾙ		*/
 	chi_dat_p->in_vec_y		= 0.0;				/* ﾜ-ﾙﾄﾞ系の入力Yﾍﾞｸﾄﾙ		*/
@@ -1985,9 +1985,9 @@ void	init_chi_dat(
 	chi_dat_p->move_angle	= 0;				/* 移動方向					*/
 
 	chi_dat_p->del_point	= 0;				/* ﾎﾟｲﾝﾄ変化量				*/
-	chi_dat_p->del_point_bk	= 0;				/* 　　〃　　　のﾊﾞｯｸｱｯﾌﾟ	*/
-	chi_dat_p->obj_point	= 0;				/* ｵﾌﾞｼﾞｪｸﾄﾎﾟｲﾝﾄ			*/
-	chi_dat_p->obj_no		= CENTER_OBJ_NO;	/* ｵﾌﾞｼﾞｪｸﾄﾅﾝﾊﾞ-			*/
+	chi_dat_p->del_point_bk	= 0;				/* 　　〃　　　のﾊﾞｯｸｱｯﾌﾟ		*/
+	chi_dat_p->obj_point	= 0;				/* ｵﾌﾞｼﾞｪｸﾄﾎﾟｲﾝﾄ				*/
+	chi_dat_p->obj_no		= CENTER_OBJ_NO;	/* ｵﾌﾞｼﾞｪｸﾄﾅﾝﾊﾞ-				*/
 
 
 	/************************************************************/
@@ -3419,7 +3419,7 @@ void *mot_tn203[] = {
 	};
 
 
-/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_del_point_move(			***/
+/***	ﾌﾟﾛﾄﾀｲﾌﾟ: INT	get_del_point_move(				***/
 /***						struct chi_dat			***/
 /***							*chi_dat_p			***/
 /***					);							***/
@@ -3433,20 +3433,20 @@ INT		get_del_point_move(
 		)
 {
 
-	long	index;					/* ﾃﾞ-ﾀ検索用ｲﾝﾃﾞｯｸｽ					*/
-	FIXED	vec_cos;				/* 入力ﾍﾞｸﾄﾙのｺｻｲﾝ値					*/
+	long	index;					/* ﾃﾞ-ﾀ検索用ｲﾝﾃﾞｯｸｽ						*/
+	FIXED	vec_cos;				/* 入力ﾍﾞｸﾄﾙのｺｻｲﾝ値						*/
 	FIXED	rvalue;					/* 返り値								*/
 
 
 	/* 現在の移動角とﾍﾞｸﾄﾙの方向の差分を求める（８方向化）	*/
-	index	= chi_dat_p->move_angle				/* 現在の移動角とﾍﾞｸﾄﾙの	*/
-			- chi_dat_p->vec_angle;				/* 方向の差分を求める		*/
-	index	&= 0xE000;							/* (8方向化)				*/
+	index	= chi_dat_p->move_angle				/* 現在の移動角とﾍﾞｸﾄﾙの		*/
+			- chi_dat_p->vec_angle;				/* 方向の差分を求める			*/
+	index	&= 0xE000;							/* (8方向化)					*/
 
-	if (index) {								/* 現在の移動角とﾍﾞｸﾄﾙが	*/
+	if (index) {								/* 現在の移動角とﾍﾞｸﾄﾙが		*/
 		rvalue	= -chi_dat_p->vec_length;		/* 同方向の時				*/
 	}											/* 							*/
-	else {										/* 現在の移動角とﾍﾞｸﾄﾙが	*/
+	else {										/* 現在の移動角とﾍﾞｸﾄﾙが		*/
 		rvalue	=  chi_dat_p->vec_length;		/* 逆方向の時				*/
 	}											/* 							*/
 
@@ -3457,7 +3457,7 @@ INT		get_del_point_move(
 
 /******************************************************/
 /***												***/
-/***	機能	: 乳ﾍﾞ-ｽ及び、乳頂点の座標算出		***/
+/***	機能	: 乳ﾍﾞ-ｽ及び、乳頂点の座標算出			***/
 /***												***/
 /***	作成日	: H8.12.05							***/
 /***	作成者	: JUN								***/
@@ -3479,7 +3479,7 @@ void	chi_pos_calc(
 
 	INT		i;						/* ﾙ-ﾌﾟ用変数							*/
 	INT		point_cnt;
-	Uint8	l_point_no;				/* 作業頂点ﾅﾝﾊﾞ-						*/
+	Uint8	l_point_no;				/* 作業頂点ﾅﾝﾊﾞ-							*/
 	Uint8	l_pos_index;			/* 作業頂点座標ﾃﾞ-ﾀｲﾝﾃﾞｯｸｽ				*/
 	FIXED	l_chi_pnt_dis;
 	void	*l_ptr;
@@ -3493,10 +3493,10 @@ void	chi_pos_calc(
 	l_pnt_dis_p			= chi_dat_p->pnt_dis_p[base_no];
 	for (i = 0; i < chi_dat_p->pnt_cnt[base_no]; i++) {
 		l_point_no	= (Uint8)*l_pnt_no_p;
-//		l_chi_point_plane[l_point_no][X]		/* ﾎﾟﾘｺﾞﾝ頂点のX座標を更新	*/
+//		l_chi_point_plane[l_point_no][X]		/* ﾎﾟﾘｺﾞﾝ頂点のX座標を更新		*/
 //			= chi_point_ks_dis[base_no][i][X]	/* 							*/
 //			+ chi_point[ply_no][base_no][X];	/* 							*/
-		l_chi_point_plane[l_point_no][Y]		/* ﾎﾟﾘｺﾞﾝ頂点のY座標を更新	*/
+		l_chi_point_plane[l_point_no][Y]		/* ﾎﾟﾘｺﾞﾝ頂点のY座標を更新		*/
 			= l_pnt_dis_p[i][Y]
 			+ chi_point[ply_no][base_no][Y];	/* 							*/
 		l_pnt_no_p++;
@@ -3533,7 +3533,7 @@ void	init_chi_dat(
 
 	void	**chi_tbl_ptr;			/* ﾀｲﾐﾝｸﾞﾃﾞ-ﾀ内乳ﾃﾞ-ﾀﾃ-ﾌﾞﾙﾎﾟｲﾝﾀ			*/
 	INT		*dat_ptr;				/* ﾀｲﾐﾝｸﾞﾃﾞ-ﾀ内乳ﾃﾞ-ﾀﾎﾟｲﾝﾀ				*/
-	INT		*ang_total_p;			/* 角度累計格納ｱﾄﾞﾚｽﾎﾟｲﾝﾀ				*/
+	INT		*ang_total_p;			/* 角度累計格納ｱﾄﾞﾚｽﾎﾟｲﾝﾀ					*/
 
 	struct chi_dat	*chi_dat_p;		/* 乳ﾃﾞ-ﾀﾎﾟｲﾝﾀ							*/
 
@@ -3546,7 +3546,7 @@ void	init_chi_dat(
 
 	chi_dat_p->char_no		= chr_no;			/* ｷｬﾗｸﾀ-ﾅﾝﾊﾞ-				*/
 
-	chi_dat_p->stop_flg		= OFF;				/* 外部からの強制停止ﾌﾗｸﾞ	*/
+	chi_dat_p->stop_flg		= OFF;				/* 外部からの強制停止ﾌﾗｸﾞ		*/
 
 	chi_dat_p->in_vec_x		= 0.0;				/* ﾜ-ﾙﾄﾞ系の入力Xﾍﾞｸﾄﾙ		*/
 	chi_dat_p->in_vec_y		= 0.0;				/* ﾜ-ﾙﾄﾞ系の入力Yﾍﾞｸﾄﾙ		*/
@@ -3561,9 +3561,9 @@ void	init_chi_dat(
 	chi_dat_p->move_angle	= 0x4000;			/* 移動方向					*/
 
 	chi_dat_p->del_point	= 0;				/* ﾎﾟｲﾝﾄ変化量				*/
-	chi_dat_p->del_point_bk	= 0;				/* 　　〃　　　のﾊﾞｯｸｱｯﾌﾟ	*/
-	chi_dat_p->obj_point	= 0;				/* ｵﾌﾞｼﾞｪｸﾄﾎﾟｲﾝﾄ			*/
-	chi_dat_p->obj_no		= CENTER_OBJ_NO;	/* ｵﾌﾞｼﾞｪｸﾄﾅﾝﾊﾞ-			*/
+	chi_dat_p->del_point_bk	= 0;				/* 　　〃　　　のﾊﾞｯｸｱｯﾌﾟ		*/
+	chi_dat_p->obj_point	= 0;				/* ｵﾌﾞｼﾞｪｸﾄﾎﾟｲﾝﾄ				*/
+	chi_dat_p->obj_no		= CENTER_OBJ_NO;	/* ｵﾌﾞｼﾞｪｸﾄﾅﾝﾊﾞ-				*/
 
 
 	/************************************************************/
