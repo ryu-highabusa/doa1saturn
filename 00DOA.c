@@ -1604,16 +1604,6 @@ extern	UINT8	thr_dis_blow_flg[2 ];
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 UINT16 	 CMD_SIT[] = {			 
 	(UINT16)   0x0A  			  ,	(UINT16)  0xFFFF 		  , 
 		(UINT16)   0x0200 | 0x0010  			  ,	(UINT16)  0x10 		  , 
