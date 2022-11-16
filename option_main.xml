@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- encoding:utf8 -*- -->
+<menu>
+
+<!--
+  @file			option_main.xml
+  @brief		オプションメイン 2D属性データ
+  @since		2007-07-23 17:17:00
+  @author		MIYANO katsuhiro
+-->
+
+	<!--- テンプレート定義 --->
+	<components>
+	</components>
+
+	<!--- レイアウト情報 -->
+	<layout>
+		<!--枠全体-->
+		<window id="dlg_win" region="spd_dlg_win" update="update_dlg_win"draw="draw_dlg_win">
+			<!--設定項目表示位置-->
+			<component id="win" region="spd_win" draw="draw_win" permeable="true"/>
+			<!--枠-->
+			<component id="wnd_up_l" region="spd_wnd_up_l" draw="draw_wnd_up_l" permeable="true"/>
+			<component id="wnd_up_r" region="spd_wnd_up_r" draw="draw_wnd_up_r" permeable="true"/>
+			<component id="wnd_ub_u" region="spd_wnd_ub_u" draw="draw_wnd_ub_u" permeable="true"/>
+			<component id="wnd_ub_l" region="spd_wnd_ub_l" draw="draw_wnd_ub_l" permeable="true"/>
+			<component id="wnd_ub_b" region="spd_wnd_ub_b" draw="draw_wnd_ub_b" permeable="true"/>
+			<component id="wnd_ub_r" region="spd_wnd_ub_r" draw="draw_wnd_ub_r" permeable="true"/>
+			<component id="wnd_ub_m" region="spd_wnd_ub_m" draw="draw_wnd_ub_m" permeable="true"/>
+			<component id="wnd_bt_l" region="spd_wnd_bt_l" draw="draw_wnd_bt_l" permeable="true"/>
+			<component id="wnd_bt_r" region="spd_wnd_bt_r" draw="draw_wnd_bt_r" permeable="true"/>
+			
+			<!--システムタブ-->
+			<component id="tab_sys" region="spd_tab_sys" update="update_tab_sys" draw="draw_tab_sys" active="true"/>
+				<component id="sfnt_tab_sys" region="spd_sfnt_tab_sys" permeable="true"/>
+			<!--操作タブ-->
+			<component id="tab_op" region="spd_tab_op" update="update_tab_op" draw="draw_tab_op"/>
+				<component id="sfnt_tab_op" region="spd_sfnt_tab_op" permeable="true"/>
+			<!--情報タブ-->
+			<component id="tab_inf" region="spd_tab_inf" update="update_tab_inf" draw="draw_tab_inf"/>
+				<component id="sfnt_tab_inf" region="spd_sfnt_tab_inf" permeable="true"/>
+			
+			<!--初期設定BTN-->
+			<component id="btn_ini" region="spd_btn_ini"update="update_btn_ini" draw="draw_btn_ini"/>
+				<component id="btn_ini_nml_r" region="spd_btn_ini_nml_r" permeable="true"/>
+				<component id="btn_ini_nml_m" region="spd_btn_ini_nml_m" permeable="true"/>
+				<component id="btn_ini_nml_l" region="spd_btn_ini_nml_l" permeable="true"/>
+				<component id="btn_ini_slt_r" region="spd_btn_ini_slt_r" permeable="true"/>
+				<component id="btn_ini_slt_m" region="spd_btn_ini_slt_m" permeable="true"/>
+				<component id="btn_ini_slt_l" region="spd_btn_ini_slt_l" permeable="true"/>
+				<component id="btn_ini_on_r" region="spd_btn_ini_on_r" permeable="true"/>
+				<component id="btn_ini_on_m" region="spd_btn_ini_on_m" permeable="true"/>
+				<component id="btn_ini_on_l" region="spd_btn_ini_on_l" permeable="true"/>
+				<component id="btn_ini_not_r" region="spd_btn_ini_not_r" permeable="true"/>
+				<component id="btn_ini_not_m" region="spd_btn_ini_not_m" permeable="true"/>
+				<component id="btn_ini_not_l" region="spd_btn_ini_not_l" permeable="true"/>
+				<component id="sfnt_btn_ini" region="spd_sfnt_btn_ini" permeable="true"/>
+				
+			
+			<!--OKBTN-->
+			<component id="btn_ok" region="spd_btn_ok"update="update_btn_ok" draw="draw_btn_ok"/>
+				<component id="btn_ok_nml_r" region="spd_btn_ok_nml_r" permeable="true"/>
+				<component id="btn_ok_nml_m" region="spd_btn_ok_nml_m" permeable="true"/>
+				<component id="btn_ok_nml_l" region="spd_btn_ok_nml_l" permeable="true"/>
+				<component id="btn_ok_slt_r" region="spd_btn_ok_slt_r" permeable="true"/>
+				<component id="btn_ok_slt_m" region="spd_btn_ok_slt_m" permeable="true"/>
+				<component id="btn_ok_slt_l" region="spd_btn_ok_slt_l" permeable="true"/>
+				<component id="btn_ok_on_r" region="spd_btn_ok_on_r" permeable="true"/>
+				<component id="btn_ok_on_m" region="spd_btn_ok_on_m" permeable="true"/>
+				<component id="btn_ok_on_l" region="spd_btn_ok_on_l" permeable="true"/>
+				<component id="btn_ok_not_r" region="spd_btn_ok_not_r" permeable="true"/>
+				<component id="btn_ok_not_m" region="spd_btn_ok_not_m" permeable="true"/>
+				<component id="btn_ok_not_l" region="spd_btn_ok_not_l" permeable="true"/>
+				<component id="sfnt_btn_ok" region="spd_sfnt_btn_ok" permeable="true"/>
+				
+			
+			<!--キャンセルBTN-->
+			<component id="btn_can" region="spd_btn_can"update="update_btn_can" draw="draw_btn_can"/>
+				<component id="btn_can_nml_r" region="spd_btn_can_nml_r" permeable="true"/>
+				<component id="btn_can_nml_m" region="spd_btn_can_nml_m" permeable="true"/>
+				<component id="btn_can_nml_l" region="spd_btn_can_nml_l" permeable="true"/>
+				<component id="btn_can_slt_r" region="spd_btn_can_slt_r" permeable="true"/>
+				<component id="btn_can_slt_m" region="spd_btn_can_slt_m" permeable="true"/>
+				<component id="btn_can_slt_l" region="spd_btn_can_slt_l" permeable="true"/>
+				<component id="btn_can_on_r" region="spd_btn_can_on_r" permeable="true"/>
+				<component id="btn_can_on_m" region="spd_btn_can_on_m" permeable="true"/>
+				<component id="btn_can_on_l" region="spd_btn_can_on_l" permeable="true"/>
+				<component id="btn_can_not_r" region="spd_btn_can_not_r" permeable="true"/>
+				<component id="btn_can_not_m" region="spd_btn_can_not_m" permeable="true"/>
+				<component id="btn_can_not_l" region="spd_btn_can_not_l" permeable="true"/>
+				<component id="sfnt_btn_can" region="spd_sfnt_btn_can" permeable="true"/>
+				
+		</window>
+	</layout>
+
+	<!--- イベント --->
+	<events>
+	
+<!-- 更新イベント -->
+		<event:composite id="update_dlg_win">
+			<!-- 被覆状態のチェック -->
+			<or>
+				<condition>
+						<predicate_point_hover_in/>
+					<event:composite>
+						<hover_enable/>
+						<change_cursor label="mouse_over"/>
+					</event:composite>
+				</condition>
+				<condition>
+						<predicate_point_hover_out/>
+					<event:composite>
+						<hover_disable/>
+						<restore_cursor/>
+					</event:composite>
+				</condition>
+			</or>
+		
+			<or>
+				<!-- 左クリック -->
+				<condition><predicate_point_hold_in button="left"/>
+					<event:composite>
+						<drag drag="ready"/>
+						<hold_enable/>
+					</event:composite>
+				</condition>
+
+				<!-- ドラッグ開始 -->
+				<condition>
+					<and>
+						<predicate_drag_start button="left" threshold="0.001"/>
+						<predicate_hold/>
+					</and>
+					<event:composite>
+						<push_drag/>
+						<drag drag="start"/>
+						<hook id="drag_start_option_main"/>
+					</event:composite>
+				</condition>
+
+				<!-- ドラッグ終了 -->
+				<condition>
+					<and>
+						<predicate_drag drag="start"/>
+						<predicate_point_button_off button="left"/>
+					</and>
+					<event:composite>
+						<clear_drags/>
+						<drag drag="ready"/>
+						<hold_disable/>
+						<hook id="drag_end_dlg_option_main"/>
+					</event:composite>
+				</condition>
+
+				<!-- ドラッグ中は移動 -->
+				<condition>
+					<predicate_drag drag="start"/>
+					<iterate_drags>
+						<center_drag button="left"/>
+					</iterate_drags>
+				</condition>
+			</or>
+			<hook id="update_option_main"/>
+		</event:composite>
+		
+
+		<!--システムタブ　更新イベント-->
+		<event:composite id="update_tab_sys">
+			<!-- 被覆状態のチェック -->
+			<or>
+				<condition>
+					<and>
+						<!--押下,無効状態じゃなかったら-->
+						<not><predicate_point_button_on button="left"/></not>
+						<predicate_point_hover_in/>
+						<not><predicate_disable/></not>
+					</and>
+					<event:composite>
+						<or>
+							<!--押下状態じゃなかったら被覆のSEを鳴らす-->
+							<condition>
+							<and>
+								<not><predicate_hold/></not>
+								<not><predicate_active/></not>
+							</and>
+								<event:composite>
+									<play_sound:eden label="se_m_over"/>
+									<change_cursor label="button"/>
+								</event:composite>
+							</condition>
+						</or>
+						
+						<hover_enable/>
+					</event:composite>
+				</condition>
+				
+				<condition><predicate_point_hover_out/>
+					<event:composite>
+						<hover_disable/>
+						<restore_cursor/>
+					</event:composite>
+				</condition>
+			</or>
+			
+			<!--無効状態でない時-->
+			<condition><not><predicate_disable/></not>
+				<or>
+					<!-- 左クリックのチェック -->
+					<condition>
+						<and>
+							<predicate_point_hold_in button="left"/>
+							<not><predicate_active/></not>
+						</and>
+						<event:composite>
+							<hold_enable/>
+							<play_sound:eden label="se_mr_sub_ok"/>
+						</event:composite>
+					</condition>
+					<!-- 被覆しておらずボタンが離されたら、メニュー要素の押下状態を無効にする。-->
+					<condition><not><predicate_point_hold_out button="left"/></not>
+						<condition><predicate_point_button_off button="left"/>
+							<hold_disable/>
+						</condition>
+					</condition>
+				</or>
+			</condition>
+			
+			<condition><predicate_hold/>
+				<event:composite>
+					<!-- 他のタブを非アクティブに変更 -->
+					<other component="tab_op"><active_disable/></other>
+					<other component="tab_inf"><active_disable/></other>
+					<!-- 自分自身をアクティブに変更 -->
+					<active_enable/>
+					<hook id="hold_in_tab_sys"/>
+					<hold_disable/>
+				</event:composite>
+			</condition>
+		</event:composite>
+		
+		<!--操作タブ　更新イベント-->
+		<event:composite id="update_tab_op">
+			<!-- 被覆状態のチェック -->
+			<or>
+				<condition>
+					<and>
+						<!--押下,無効状態じゃなかったら-->
+						<not><predicate_point_button_on button="left"/></not>
+						<predicate_point_hover_in/>
+						<not><predicate_disable/></not>
+					</and>
+					<event:composite>
+						<or>
+							<!--押下状態じゃなかったら被覆のSEを鳴らす-->
+							<condition>
+							<and>
+								<not><predicate_hold/></not>
+								<not><predicate_active/></not>
+							</and>
+								<event:composite>
+									<play_sound:eden label="se_m_over"/>
+									<change_cursor label="button"/>
+								</event:composite>
+							</condition>
+						</or>
+						
+						<hover_enable/>
+					</event:composite>
+				</condition>
+				
+				<condition><predicate_point_hover_out/>
+					<event:composite>
+						<hover_disable/>
+						<restore_cursor/>
+					</event:composite>
+				</condition>
+			</or>
+			
+			<!--無効状態でない時-->
+			<condition><not><predicate_disable/></not>
+				<or>
+					<!-- 左クリックのチェック -->
+					<condition>
+						<and>
+							<predicate_point_hold_in button="left"/>
+							<not><predicate_active/></not>
+						</and>
+						<event:composite>
+							<hold_enable/>
+							<play_sound:eden label="se_mr_sub_ok"/>
+						</event:composite>
+					</condition>
+					<!-- 被覆しておらずボタンが離されたら、メニュー要素の押下状態を無効にする。-->
+					<condition><not><predicate_point_hold_out button="left"/></not>
+						<condition><predicate_point_button_off button="left"/>
+							<hold_disable/>
+						</condition>
+					</condition>
+				</or>
+			</condition>
+			
+			<condition><predicate_hold/>
+				<event:composite>
+					<!-- 他のタブを非アクティブに変更 -->
+					<other component="tab_sys"><active_disable/></other>
+					<other component="tab_inf"><active_disable/></other>
+					<!-- 自分自身をアクティブに変更 -->
+					<active_enable/>
+					<hook id="hold_in_tab_op"/>
+					<hold_disable/>
+				</event:composite>
+			</condition>
+		</event:composite>
+		
+		<!--情報タブ　更新イベント-->
+		<event:composite id="update_tab_inf">
+			<!-- 被覆状態のチェック -->
+			<or>
+				<condition>
+					<and>
+						<!--押下,無効状態じゃなかったら-->
+						<not><predicate_point_button_on button="left"/></not>
+						<predicate_point_hover_in/>
+						<not><predicate_disable/></not>
+					</and>
+					<event:composite>
+						<or>
+							<!--押下状態じゃなかったら被覆のSEを鳴らす-->
+							<condition>
+							<and>
+								<not><predicate_hold/></not>
+								<not><predicate_active/></not>
+							</and>
+								<event:composite>
+									<play_sound:eden label="se_m_over"/>
+									<change_cursor label="button"/>
+								</event:composite>
+							</condition>
+						</or>
+						
+						<hover_enable/>
+					</event:composite>
+				</condition>
+				
+				<condition><predicate_point_hover_out/>
+					<event:composite>
+						<hover_disable/>
+						<restore_cursor/>
+					</event:composite>
+				</condition>
+			</or>
+			
+			<!--無効状態でない時-->
+			<condition><not><predicate_disable/></not>
+				<or>
+					<!-- 左クリックのチェック -->
+					<condition>
+						<and>
+							<predicate_point_hold_in button="left"/>
+							<not><predicate_active/></not>
+						</and>
+						<event:composite>
+							<hold_enable/>
+							<play_sound:eden label="se_mr_sub_ok"/>
+						</event:composite>
+					</condition>
+					<!-- 被覆しておらずボタンが離されたら、メニュー要素の押下状態を無効にする。-->
+					<condition><not><predicate_point_hold_out button="left"/></not>
+						<condition><predicate_point_button_off button="left"/>
+							<hold_disable/>
+						</condition>
+					</condition>
+				</or>
+			</condition>
+			
+			<condition><predicate_hold/>
+				<event:composite>
+					<!-- 他のタブを非アクティブに変更 -->
+					<other component="tab_sys"><active_disable/></other>
+					<other component="tab_op"><active_disable/></other>
+					<!-- 自分自身をアクティブに変更 -->
+					<active_enable/>
+					<hook id="hold_in_tab_inf"/>
+					<hold_disable/>
+				</event:composite>
+			</condition>
+		</event:composite>
+		
+		<!--初期設定BTN　更新イベント-->
+		<event:composite id="update_btn_ini">
+			<!-- 被覆状態のチェック -->
+			<or>
+				<condition>
+					<and>
+						<!--押下状態じゃなかったら-->
+						<not><predicate_point_button_on button="left"/></not>
+						<predicate_point_hover_in/>
+					</and>
+					<event:composite>
+						<or>
+							<!--押下状態じゃなかったら被覆のSEを鳴らす-->
+							<condition><not><predicate_hold/></not>
+								<play_sound:eden label="se_m_over"/>
+							</condition>
+						</or>
+						
+						<change_cursor label="button"/>
+						<hover_enable/>
+					</event:composite>
+				</condition>
+				
+				<condition><predicate_point_hover_out/>
+					<event:composite>
+						<hover_disable/>
+						<restore_cursor/>
+					</event:composite>
+				</condition>
+			</or>
+
+			<!--無効状態でない時-->
+			<condition><not><predicate_disable/></not>
+				<!-- 左クリックのチェック -->
+				<or>
+					<!--左クリック-->
+					<condition><predicate_point_hold_in button="left"/>
+						<event:composite>
+							<hook id="hold_in_btn_ini"/>
+							<hold_enable/>
+						</event:composite>
+					</condition>
+					<condition><predicate_point_hold_out button="left"/>
+						<event:composite>
+							<hold_disable/>
+							<play_sound:eden label="se_ok"/>
+							<hook id="hold_out_btn_ini"/>
+						</event:composite>
+					</condition>
+					<!-- 被覆しておらずボタンが離されたら、メニュー要素の押下状態を無効にする。-->
+					<condition><not><predicate_point_hold_out button="left"/></not>
+						<condition><predicate_point_button_off button="left"/>
+							<hold_disable/>
+						</condition>
+					</condition>
+				</or>
+			</condition>
+		</event:composite>
+
+		<!--OKBTN　更新イベント-->
+		<event:composite id="update_btn_ok">
+			<!-- 被覆状態のチェック -->
+			<or>
+				<condition>
+					<and>
+						<!--押下状態じゃなかったら-->
+						<not><predicate_point_button_on button="left"/></not>
+						<predicate_point_hover_in/>
+					</and>
+					<event:composite>
+						<or>
+							<!--押下状態じゃなかったら被覆のSEを鳴らす-->
+							<condition><not><predicate_hold/></not>
+								<play_sound:eden label="se_m_over"/>
+							</condition>
+						</or>
+						
+						<change_cursor label="button"/>
+						<hover_enable/>
+					</event:composite>
+				</condition>
+				
+				<condition><predicate_point_hover_out/>
+					<event:composite>
+						<hover_disable/>
+						<restore_cursor/>
+					</event:composite>
+				</condition>
+			</or>
+
+			<!--無効状態でない時-->
+			<condition><not><predicate_disable/></not>
+				<!-- 左クリックのチェック -->
+				<or>
+					<!--左クリック-->
+					<condition><predicate_point_hold_in button="left"/>
+						<event:composite>
+							<hook id="hold_in_btn_ok"/>
+							<hold_enable/>
+						</event:composite>
+					</condition>
+					<condition><predicate_point_hold_out button="left"/>
+						<event:composite>
+							<hold_disable/>
+							<play_sound:eden label="se_ok"/>
+							<hook id="hold_out_btn_ok"/>
+						</event:composite>
+					</condition>
+					<!-- 被覆しておらずボタンが離されたら、メニュー要素の押下状態を無効にする。-->
+					<condition><not><predicate_point_hold_out button="left"/></not>
+						<condition><predicate_point_button_off button="left"/>
+							<hold_disable/>
+						</condition>
+					</condition>
+				</or>
+			</condition>
+		</event:composite>
+
+		<!--キャンセルBTN　更新イベント-->
+		<event:composite id="update_btn_can">
+			<!-- 被覆状態のチェック -->
+			<or>
+				<condition>
+					<and>
+						<!--押下状態じゃなかったら-->
+						<not><predicate_point_button_on button="left"/></not>
+						<predicate_point_hover_in/>
+					</and>
+					<event:composite>
+						<or>
+							<!--押下状態じゃなかったら被覆のSEを鳴らす-->
+							<condition><not><predicate_hold/></not>
+								<play_sound:eden label="se_m_over"/>
+							</condition>
+						</or>
+						
+						<change_cursor label="button"/>
+						<hover_enable/>
+					</event:composite>
+				</condition>
+				
+				<condition><predicate_point_hover_out/>
+					<event:composite>
+						<hover_disable/>
+						<restore_cursor/>
+					</event:composite>
+				</condition>
+			</or>
+
+			<!--無効状態でない時-->
+			<condition><not><predicate_disable/></not>
+				<!-- 左クリックのチェック -->
+				<or>
+					<!--左クリック-->
+					<condition><predicate_point_hold_in button="left"/>
+						<event:composite>
+							<hook id="hold_in_btn_can"/>
+							<hold_enable/>
+						</event:composite>
+					</condition>
+					<condition><predicate_point_hold_out button="left"/>
+						<event:composite>
+							<hold_disable/>
+							<play_sound:eden label="se_cancel"/>
+							<hook id="hold_out_btn_can"/>
+						</event:composite>
+					</condition>
+					<!-- 被覆しておらずボタンが離されたら、メニュー要素の押下状態を無効にする。-->
+					<condition><not><predicate_point_hold_out button="left"/></not>
+						<condition><predicate_point_button_off button="left"/>
+							<hold_disable/>
+						</condition>
+					</condition>
+				</or>
+			</condition>
+		</event:composite>
+
+
+<!--描画イベント-->
+		<!--枠全体　描画イベント-->
+		<event:composite id="draw_dlg_win"><draw_sprite sprite="spd_dlg_win"/></event:composite>
+		<!--設定項目表示位置　描画イベント-->
+		<event:composite id="draw_win"><draw_sprite sprite="spd_win"/></event:composite>
+		<!--枠-->
+		<event:composite id="draw_wnd_up_l"><draw_sprite sprite="spd_wnd_up_l"/></event:composite>
+		<event:composite id="draw_wnd_up_r"><draw_sprite sprite="spd_wnd_up_r"/></event:composite>
+		<event:composite id="draw_wnd_ub_u"><draw_sprite sprite="spd_wnd_ub_u"/></event:composite>
+		<event:composite id="draw_wnd_ub_l"><draw_sprite sprite="spd_wnd_ub_l"/></event:composite>
+		<event:composite id="draw_wnd_ub_b"><draw_sprite sprite="spd_wnd_ub_b"/></event:composite>
+		<event:composite id="draw_wnd_ub_r"><draw_sprite sprite="spd_wnd_ub_r"/></event:composite>
+		<event:composite id="draw_wnd_ub_m"><draw_sprite sprite="spd_wnd_ub_m"/></event:composite>
+		<event:composite id="draw_wnd_bt_l"><draw_sprite sprite="spd_wnd_bt_l"/></event:composite>
+		<event:composite id="draw_wnd_bt_r"><draw_sprite sprite="spd_wnd_bt_r"/></event:composite>
+		
+
+		<!--システムタブ　描画イベント-->
+		<event:composite id="draw_tab_sys">
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<draw_sprite sprite="spd_tab_sys_not"/>
+				</condition>
+				<condition>
+					<or>
+						<predicate_active/>
+						<predicate_hold/>
+					</or>
+					<!-- 押下、アクティブ用のを描画 -->
+					<draw_sprite sprite="spd_tab_sys_on"/>
+				</condition>
+				<condition><predicate_hover/>
+					<!-- マウス被覆状態用のを描画 -->
+					<draw_sprite sprite="spd_tab_sys_slt"/>
+				</condition>
+				<draw_sprite sprite="spd_tab_sys"/>
+			</or>
+			
+			<!--ボタンテキストイベント-->
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<other component="sfnt_tab_sys">
+						<color color="80ffffff"><draw_text text="txt_sfnt_tab_sys"/></color>
+					</other>
+				</condition>
+				
+				<!--通常状態-->
+				<other component="sfnt_tab_sys"><draw_text text="txt_sfnt_tab_sys"/></other>
+			</or>
+		</event:composite>
+		
+		<!--操作タブ　描画イベント-->
+		<event:composite id="draw_tab_op">
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<draw_sprite sprite="spd_tab_op_not"/>
+				</condition>
+				<condition>
+					<or>
+						<predicate_active/>
+						<predicate_hold/>
+					</or>
+					<!-- 押下、アクティブ用のを描画 -->
+					<draw_sprite sprite="spd_tab_op_on"/>
+				</condition>
+				<condition><predicate_hover/>
+					<!-- マウス被覆状態用のを描画 -->
+					<draw_sprite sprite="spd_tab_op_slt"/>
+				</condition>
+				<draw_sprite sprite="spd_tab_op"/>
+			</or>
+			
+			<!--ボタンテキストイベント-->
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<other component="sfnt_tab_op">
+						<color color="80ffffff"><draw_text text="txt_sfnt_tab_op"/></color>
+					</other>
+				</condition>
+				
+				<!--通常状態-->
+				<other component="sfnt_tab_op"><draw_text text="txt_sfnt_tab_op"/></other>
+			</or>
+		</event:composite>
+		
+		<!--情報タブ　描画イベント-->
+		<event:composite id="draw_tab_inf">
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<draw_sprite sprite="spd_tab_inf_not"/>
+				</condition>
+				<condition>
+					<or>
+						<predicate_active/>
+						<predicate_hold/>
+					</or>
+					<!-- 押下、アクティブ用のを描画 -->
+					<draw_sprite sprite="spd_tab_inf_on"/>
+				</condition>
+				<condition><predicate_hover/>
+					<!-- マウス被覆状態用のを描画 -->
+					<draw_sprite sprite="spd_tab_inf_slt"/>
+				</condition>
+				<draw_sprite sprite="spd_tab_inf"/>
+			</or>
+			
+			<!--ボタンテキストイベント-->
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<other component="sfnt_tab_inf">
+						<color color="80ffffff"><draw_text text="txt_sfnt_tab_inf"/></color>
+					</other>
+				</condition>
+				
+				<!--通常状態-->
+				<other component="sfnt_tab_inf"><draw_text text="txt_sfnt_tab_inf"/></other>
+			</or>
+		</event:composite>
+
+		<!--初期設定BTN　描画イベント-->
+		<event:composite id="draw_btn_ini">
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<event:composite>
+						<other component="btn_ini_not_l">
+							<draw_sprite sprite="spd_btn_ini_not_l"/>
+						</other>
+						<other component="btn_ini_not_m">
+							<draw_sprite sprite="spd_btn_ini_not_m"/>
+						</other>
+						<other component="btn_ini_not_r">
+							<draw_sprite sprite="spd_btn_ini_not_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--押下状態-->
+				<condition><predicate_hold/>
+					<event:composite>
+						<other component="btn_ini_on_l">
+							<draw_sprite sprite="spd_btn_ini_on_l"/>
+						</other>
+						<other component="btn_ini_on_m">
+							<draw_sprite sprite="spd_btn_ini_on_m"/>
+						</other>
+						<other component="btn_ini_on_r">
+							<draw_sprite sprite="spd_btn_ini_on_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--被覆状態-->
+				<condition><predicate_hover/>
+					<event:composite>
+						<other component="btn_ini_slt_l">
+							<draw_sprite sprite="spd_btn_ini_slt_l"/>
+						</other>
+						<other component="btn_ini_slt_m">
+							<draw_sprite sprite="spd_btn_ini_slt_m"/>
+						</other>
+						<other component="btn_ini_slt_r">
+							<draw_sprite sprite="spd_btn_ini_slt_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--通常状態-->
+				<event:composite>
+					<other component="btn_ini_nml_l">
+						<draw_sprite sprite="spd_btn_ini_nml_l"/>
+					</other>
+					<other component="btn_ini_nml_m">
+						<draw_sprite sprite="spd_btn_ini_nml_m"/>
+					</other>
+					<other component="btn_ini_nml_r">
+						<draw_sprite sprite="spd_btn_ini_nml_r"/>
+					</other>
+				</event:composite>
+			</or>
+			
+			<!--ボタンテキストイベント-->
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<other component="sfnt_btn_ini">
+						<color color="80ffffff"><draw_text text="txt_sfnt_btn_ini"/></color>
+					</other>
+				</condition>
+				
+				<!--通常状態-->
+				<other component="sfnt_btn_ini"><draw_text text="txt_sfnt_btn_ini"/></other>
+			</or>
+		</event:composite>
+
+		<!--OKBTN　描画イベント-->
+		<event:composite id="draw_btn_ok">
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<event:composite>
+						<other component="btn_ok_not_l">
+							<draw_sprite sprite="spd_btn_ok_not_l"/>
+						</other>
+						<other component="btn_ok_not_m">
+							<draw_sprite sprite="spd_btn_ok_not_m"/>
+						</other>
+						<other component="btn_ok_not_r">
+							<draw_sprite sprite="spd_btn_ok_not_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--押下状態-->
+				<condition><predicate_hold/>
+					<event:composite>
+						<other component="btn_ok_on_l">
+							<draw_sprite sprite="spd_btn_ok_on_l"/>
+						</other>
+						<other component="btn_ok_on_m">
+							<draw_sprite sprite="spd_btn_ok_on_m"/>
+						</other>
+						<other component="btn_ok_on_r">
+							<draw_sprite sprite="spd_btn_ok_on_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--被覆状態-->
+				<condition><predicate_hover/>
+					<event:composite>
+						<other component="btn_ok_slt_l">
+							<draw_sprite sprite="spd_btn_ok_slt_l"/>
+						</other>
+						<other component="btn_ok_slt_m">
+							<draw_sprite sprite="spd_btn_ok_slt_m"/>
+						</other>
+						<other component="btn_ok_slt_r">
+							<draw_sprite sprite="spd_btn_ok_slt_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--通常状態-->
+				<event:composite>
+					<other component="btn_ok_nml_l">
+						<draw_sprite sprite="spd_btn_ok_nml_l"/>
+					</other>
+					<other component="btn_ok_nml_m">
+						<draw_sprite sprite="spd_btn_ok_nml_m"/>
+					</other>
+					<other component="btn_ok_nml_r">
+						<draw_sprite sprite="spd_btn_ok_nml_r"/>
+					</other>
+				</event:composite>
+			</or>
+			
+			<!--ボタンテキストイベント-->
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<other component="sfnt_btn_ok">
+						<color color="80ffffff"><draw_text text="txt_sfnt_btn_ok"/></color>
+					</other>
+				</condition>
+				
+				<!--通常状態-->
+				<other component="sfnt_btn_ok"><draw_text text="txt_sfnt_btn_ok"/></other>
+			</or>
+		</event:composite>
+		
+		<!--キャンセルBTN　描画イベント-->
+		<event:composite id="draw_btn_can">
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<event:composite>
+						<other component="btn_can_not_l">
+							<draw_sprite sprite="spd_btn_can_not_l"/>
+						</other>
+						<other component="btn_can_not_m">
+							<draw_sprite sprite="spd_btn_can_not_m"/>
+						</other>
+						<other component="btn_can_not_r">
+							<draw_sprite sprite="spd_btn_can_not_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--押下状態-->
+				<condition><predicate_hold/>
+					<event:composite>
+						<other component="btn_can_on_l">
+							<draw_sprite sprite="spd_btn_can_on_l"/>
+						</other>
+						<other component="btn_can_on_m">
+							<draw_sprite sprite="spd_btn_can_on_m"/>
+						</other>
+						<other component="btn_can_on_r">
+							<draw_sprite sprite="spd_btn_can_on_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--被覆状態-->
+				<condition><predicate_hover/>
+					<event:composite>
+						<other component="btn_can_slt_l">
+							<draw_sprite sprite="spd_btn_can_slt_l"/>
+						</other>
+						<other component="btn_can_slt_m">
+							<draw_sprite sprite="spd_btn_can_slt_m"/>
+						</other>
+						<other component="btn_can_slt_r">
+							<draw_sprite sprite="spd_btn_can_slt_r"/>
+						</other>
+					</event:composite>
+				</condition>
+				<!--通常状態-->
+				<event:composite>
+					<other component="btn_can_nml_l">
+						<draw_sprite sprite="spd_btn_can_nml_l"/>
+					</other>
+					<other component="btn_can_nml_m">
+						<draw_sprite sprite="spd_btn_can_nml_m"/>
+					</other>
+					<other component="btn_can_nml_r">
+						<draw_sprite sprite="spd_btn_can_nml_r"/>
+					</other>
+				</event:composite>
+			</or>
+			
+			<!--ボタンテキストイベント-->
+			<or>
+				<!--無効状態-->
+				<condition><predicate_disable/>
+					<other component="sfnt_btn_can">
+						<color color="80ffffff"><draw_text text="txt_sfnt_btn_can"/></color>
+					</other>
+				</condition>
+				
+				<!--通常状態-->
+				<other component="sfnt_btn_can"><draw_text text="txt_sfnt_btn_can"/></other>
+			</or>
+		</event:composite>
+				
+	
+	</events>
+
+	<!--- 範囲情報 --->
+	<regions>
+		<!--枠全体-->
+		<region:spd id="spd_dlg_win" spd="option_main_R_w" z="-0.5"/>
+		<!--枠-->
+		<region:spd id="spd_wnd_up_l" spd="option_main_R_w_up_l" z="-0.5"/>
+		<region:spd id="spd_wnd_up_r" spd="option_main_R_w_up_r" z="-0.5"/>
+		<region:spd id="spd_wnd_ub_u" spd="option_main_R_w_ub_u" z="-0.5"/>
+		<region:spd id="spd_wnd_ub_l" spd="option_main_R_w_ub_l" z="-0.5"/>
+		<region:spd id="spd_wnd_ub_b" spd="option_main_R_w_ub_b" z="-0.5"/>
+		<region:spd id="spd_wnd_ub_r" spd="option_main_R_w_ub_r" z="-0.5"/>
+		<region:spd id="spd_wnd_ub_m" spd="option_main_R_w_ub_m" z="-0.5"/>
+		<region:spd id="spd_wnd_bt_l" spd="option_main_R_w_bt_l" z="-0.5"/>
+		<region:spd id="spd_wnd_bt_r" spd="option_main_R_w_bt_r" z="-0.5"/>
+		<!--設定項目表示位置-->
+		<region:spd id="spd_win" spd="option_main_R_win" z="-0.5"/>
+		<!--システムタブ-->
+		<region:spd id="spd_tab_sys" spd="option_main_R_tb_nml_01" z="-0.5"/>
+		<region:spd id="spd_tab_sys_slt" spd="option_main_R_tb_slt_01" z="-0.5"/>
+		<region:spd id="spd_tab_sys_on" spd="option_main_R_tb_on_01" z="-0.5"/>
+		<region:spd id="spd_tab_sys_not" spd="option_main_R_tb_not_01" z="-0.5"/>
+		<!--操作タブ-->
+		<region:spd id="spd_tab_op" spd="option_main_R_tb_nml_02" z="-0.5"/>
+		<region:spd id="spd_tab_op_slt" spd="option_main_R_tb_slt_02" z="-0.5"/>
+		<region:spd id="spd_tab_op_on" spd="option_main_R_tb_on_02" z="-0.5"/>
+		<region:spd id="spd_tab_op_not" spd="option_main_R_tb_not_02" z="-0.5"/>
+		<!--情報タブ-->
+		<region:spd id="spd_tab_inf" spd="option_main_R_tb_nml_03" z="-0.5"/>
+		<region:spd id="spd_tab_inf_slt" spd="option_main_R_tb_slt_03" z="-0.5"/>
+		<region:spd id="spd_tab_inf_on" spd="option_main_R_tb_on_03" z="-0.5"/>
+		<region:spd id="spd_tab_inf_not" spd="option_main_R_tb_not_03" z="-0.5"/>
+		<!--初期設定BTN-->
+		<region:spd id="spd_btn_ini" spd="option_main_R_btn_01" z="-0.5"/>
+		<region:spd id="spd_btn_ini_nml_r" spd="option_main_R_btn_nml_01_r" z="-0.5"/>
+		<region:spd id="spd_btn_ini_nml_m" spd="option_main_R_btn_nml_01_m" z="-0.5"/>
+		<region:spd id="spd_btn_ini_nml_l" spd="option_main_R_btn_nml_01_l" z="-0.5"/>
+		<region:spd id="spd_btn_ini_slt_r" spd="option_main_R_btn_slt_01_r" z="-0.5"/>
+		<region:spd id="spd_btn_ini_slt_m" spd="option_main_R_btn_slt_01_m" z="-0.5"/>
+		<region:spd id="spd_btn_ini_slt_l" spd="option_main_R_btn_slt_01_l" z="-0.5"/>
+		<region:spd id="spd_btn_ini_on_r" spd="option_main_R_btn_on_01_r" z="-0.5"/>
+		<region:spd id="spd_btn_ini_on_m" spd="option_main_R_btn_on_01_m" z="-0.5"/>
+		<region:spd id="spd_btn_ini_on_l" spd="option_main_R_btn_on_01_l" z="-0.5"/>
+		<region:spd id="spd_btn_ini_not_r" spd="option_main_R_btn_not_01_r" z="-0.5"/>
+		<region:spd id="spd_btn_ini_not_m" spd="option_main_R_btn_not_01_m" z="-0.5"/>
+		<region:spd id="spd_btn_ini_not_l" spd="option_main_R_btn_not_01_l" z="-0.5"/>
+		<!--OKBTN-->
+		<region:spd id="spd_btn_ok" spd="option_main_R_btn_02" z="-0.5"/>
+		<region:spd id="spd_btn_ok_nml_r" spd="option_main_R_btn_nml_02_r" z="-0.5"/>
+		<region:spd id="spd_btn_ok_nml_m" spd="option_main_R_btn_nml_02_m" z="-0.5"/>
+		<region:spd id="spd_btn_ok_nml_l" spd="option_main_R_btn_nml_02_l" z="-0.5"/>
+		<region:spd id="spd_btn_ok_slt_r" spd="option_main_R_btn_slt_02_r" z="-0.5"/>
+		<region:spd id="spd_btn_ok_slt_m" spd="option_main_R_btn_slt_02_m" z="-0.5"/>
+		<region:spd id="spd_btn_ok_slt_l" spd="option_main_R_btn_slt_02_l" z="-0.5"/>
+		<region:spd id="spd_btn_ok_on_r" spd="option_main_R_btn_on_02_r" z="-0.5"/>
+		<region:spd id="spd_btn_ok_on_m" spd="option_main_R_btn_on_02_m" z="-0.5"/>
+		<region:spd id="spd_btn_ok_on_l" spd="option_main_R_btn_on_02_l" z="-0.5"/>
+		<region:spd id="spd_btn_ok_not_r" spd="option_main_R_btn_not_02_r" z="-0.5"/>
+		<region:spd id="spd_btn_ok_not_m" spd="option_main_R_btn_not_02_m" z="-0.5"/>
+		<region:spd id="spd_btn_ok_not_l" spd="option_main_R_btn_not_02_l" z="-0.5"/>
+		<!--初期設定BTN-->
+		<region:spd id="spd_btn_can" spd="option_main_R_btn_03" z="-0.5"/>
+		<region:spd id="spd_btn_can_nml_r" spd="option_main_R_btn_nml_03_r" z="-0.5"/>
+		<region:spd id="spd_btn_can_nml_m" spd="option_main_R_btn_nml_03_m" z="-0.5"/>
+		<region:spd id="spd_btn_can_nml_l" spd="option_main_R_btn_nml_03_l" z="-0.5"/>
+		<region:spd id="spd_btn_can_slt_r" spd="option_main_R_btn_slt_03_r" z="-0.5"/>
+		<region:spd id="spd_btn_can_slt_m" spd="option_main_R_btn_slt_03_m" z="-0.5"/>
+		<region:spd id="spd_btn_can_slt_l" spd="option_main_R_btn_slt_03_l" z="-0.5"/>
+		<region:spd id="spd_btn_can_on_r" spd="option_main_R_btn_on_03_r" z="-0.5"/>
+		<region:spd id="spd_btn_can_on_m" spd="option_main_R_btn_on_03_m" z="-0.5"/>
+		<region:spd id="spd_btn_can_on_l" spd="option_main_R_btn_on_03_l" z="-0.5"/>
+		<region:spd id="spd_btn_can_not_r" spd="option_main_R_btn_not_03_r" z="-0.5"/>
+		<region:spd id="spd_btn_can_not_m" spd="option_main_R_btn_not_03_m" z="-0.5"/>
+		<region:spd id="spd_btn_can_not_l" spd="option_main_R_btn_not_03_l" z="-0.5"/>
+		<!--フォント-->
+		<region:spd id="spd_sfnt_tab_sys" spd="option_main_R_sfnt_sys" z="-0.5"/>
+		<region:spd id="spd_sfnt_tab_op" spd="option_main_R_sfnt_op" z="-0.5"/>
+		<region:spd id="spd_sfnt_tab_inf" spd="option_main_R_sfnt_inf" z="-0.5"/>
+		<region:spd id="spd_sfnt_btn_ini" spd="option_main_R_sfnt_ini" z="-0.5"/>
+		<region:spd id="spd_sfnt_btn_ok" spd="option_main_R_sfnt_ok" z="-0.5"/>
+		<region:spd id="spd_sfnt_btn_can" spd="option_main_R_sfnt_can" z="-0.5"/>
+	</regions>
+
+	<!--- スプライト情報 --->
+	<sprites>
+		<!--枠全体-->
+		<sprite:spd id="spd_dlg_win" spd="option_main_R_w"/>
+		<!--枠-->
+		<sprite:spd id="spd_wnd_up_l" spd="option_main_R_w_up_l"/>
+		<sprite:spd id="spd_wnd_up_r" spd="option_main_R_w_up_r"/>
+		<sprite:spd id="spd_wnd_ub_u" spd="option_main_R_w_ub_u"/>
+		<sprite:spd id="spd_wnd_ub_l" spd="option_main_R_w_ub_l"/>
+		<sprite:spd id="spd_wnd_ub_b" spd="option_main_R_w_ub_b"/>
+		<sprite:spd id="spd_wnd_ub_r" spd="option_main_R_w_ub_r"/>
+		<sprite:spd id="spd_wnd_ub_m" spd="option_main_R_w_ub_m"/>
+		<sprite:spd id="spd_wnd_bt_l" spd="option_main_R_w_bt_l"/>
+		<sprite:spd id="spd_wnd_bt_r" spd="option_main_R_w_bt_r"/>
+		<!--設定項目表示位置-->
+		<sprite:spd id="spd_win" spd="option_main_R_win"/>
+		<!--システムタブ-->
+		<sprite:spd id="spd_tab_sys" spd="option_main_R_tb_nml_01"/>
+		<sprite:spd id="spd_tab_sys_slt" spd="option_main_R_tb_slt_01"/>
+		<sprite:spd id="spd_tab_sys_on" spd="option_main_R_tb_on_01"/>
+		<sprite:spd id="spd_tab_sys_not" spd="option_main_R_tb_not_01"/>
+		<!--操作タブ-->
+		<sprite:spd id="spd_tab_op" spd="option_main_R_tb_nml_02"/>
+		<sprite:spd id="spd_tab_op_slt" spd="option_main_R_tb_slt_02"/>
+		<sprite:spd id="spd_tab_op_on" spd="option_main_R_tb_on_02"/>
+		<sprite:spd id="spd_tab_op_not" spd="option_main_R_tb_not_02"/>
+		<!--情報タブ-->
+		<sprite:spd id="spd_tab_inf" spd="option_main_R_tb_nml_03"/>
+		<sprite:spd id="spd_tab_inf_slt" spd="option_main_R_tb_slt_03"/>
+		<sprite:spd id="spd_tab_inf_on" spd="option_main_R_tb_on_03"/>
+		<sprite:spd id="spd_tab_inf_not" spd="option_main_R_tb_not_03"/>
+		<!--初期設定BTN-->
+		<sprite:spd id="spd_btn_ini" spd="option_main_R_btn_01"/>
+		<sprite:spd id="spd_btn_ini_nml_r" spd="option_main_R_btn_nml_01_r"/>
+		<sprite:spd id="spd_btn_ini_nml_m" spd="option_main_R_btn_nml_01_m"/>
+		<sprite:spd id="spd_btn_ini_nml_l" spd="option_main_R_btn_nml_01_l"/>
+		<sprite:spd id="spd_btn_ini_slt_r" spd="option_main_R_btn_slt_01_r"/>
+		<sprite:spd id="spd_btn_ini_slt_m" spd="option_main_R_btn_slt_01_m"/>
+		<sprite:spd id="spd_btn_ini_slt_l" spd="option_main_R_btn_slt_01_l"/>
+		<sprite:spd id="spd_btn_ini_on_r" spd="option_main_R_btn_on_01_r"/>
+		<sprite:spd id="spd_btn_ini_on_m" spd="option_main_R_btn_on_01_m"/>
+		<sprite:spd id="spd_btn_ini_on_l" spd="option_main_R_btn_on_01_l"/>
+		<sprite:spd id="spd_btn_ini_not_r" spd="option_main_R_btn_not_01_r"/>
+		<sprite:spd id="spd_btn_ini_not_m" spd="option_main_R_btn_not_01_m"/>
+		<sprite:spd id="spd_btn_ini_not_l" spd="option_main_R_btn_not_01_l"/>
+		<!--OKBTN-->
+		<sprite:spd id="spd_btn_ok" spd="option_main_R_btn_02"/>
+		<sprite:spd id="spd_btn_ok_nml_r" spd="option_main_R_btn_nml_02_r"/>
+		<sprite:spd id="spd_btn_ok_nml_m" spd="option_main_R_btn_nml_02_m"/>
+		<sprite:spd id="spd_btn_ok_nml_l" spd="option_main_R_btn_nml_02_l"/>
+		<sprite:spd id="spd_btn_ok_slt_r" spd="option_main_R_btn_slt_02_r"/>
+		<sprite:spd id="spd_btn_ok_slt_m" spd="option_main_R_btn_slt_02_m"/>
+		<sprite:spd id="spd_btn_ok_slt_l" spd="option_main_R_btn_slt_02_l"/>
+		<sprite:spd id="spd_btn_ok_on_r" spd="option_main_R_btn_on_02_r"/>
+		<sprite:spd id="spd_btn_ok_on_m" spd="option_main_R_btn_on_02_m"/>
+		<sprite:spd id="spd_btn_ok_on_l" spd="option_main_R_btn_on_02_l"/>
+		<sprite:spd id="spd_btn_ok_not_r" spd="option_main_R_btn_not_02_r"/>
+		<sprite:spd id="spd_btn_ok_not_m" spd="option_main_R_btn_not_02_m"/>
+		<sprite:spd id="spd_btn_ok_not_l" spd="option_main_R_btn_not_02_l"/>
+		<!--初期設定BTN-->
+		<sprite:spd id="spd_btn_can" spd="option_main_R_btn_03"/>
+		<sprite:spd id="spd_btn_can_nml_r" spd="option_main_R_btn_nml_03_r"/>
+		<sprite:spd id="spd_btn_can_nml_m" spd="option_main_R_btn_nml_03_m"/>
+		<sprite:spd id="spd_btn_can_nml_l" spd="option_main_R_btn_nml_03_l"/>
+		<sprite:spd id="spd_btn_can_slt_r" spd="option_main_R_btn_slt_03_r"/>
+		<sprite:spd id="spd_btn_can_slt_m" spd="option_main_R_btn_slt_03_m"/>
+		<sprite:spd id="spd_btn_can_slt_l" spd="option_main_R_btn_slt_03_l"/>
+		<sprite:spd id="spd_btn_can_on_r" spd="option_main_R_btn_on_03_r"/>
+		<sprite:spd id="spd_btn_can_on_m" spd="option_main_R_btn_on_03_m"/>
+		<sprite:spd id="spd_btn_can_on_l" spd="option_main_R_btn_on_03_l"/>
+		<sprite:spd id="spd_btn_can_not_r" spd="option_main_R_btn_not_03_r"/>
+		<sprite:spd id="spd_btn_can_not_m" spd="option_main_R_btn_not_03_m"/>
+		<sprite:spd id="spd_btn_can_not_l" spd="option_main_R_btn_not_03_l"/>
+		<!--フォント-->
+		<sprite:spd id="spd_sfnt_tab_sys" spd="option_main_R_sfnt_sys"/>
+		<sprite:spd id="spd_sfnt_tab_op" spd="option_main_R_sfnt_op"/>
+		<sprite:spd id="spd_sfnt_tab_inf" spd="option_main_R_sfnt_inf"/>
+		<sprite:spd id="spd_sfnt_btn_ini" spd="option_main_R_sfnt_ini"/>
+		<sprite:spd id="spd_sfnt_btn_ok" spd="option_main_R_sfnt_ok"/>
+		<sprite:spd id="spd_sfnt_btn_can" spd="option_main_R_sfnt_can"/>
+
+	</sprites>
+
+	<!--- テクスチャ情報 --->
+	<textures>
+	</textures>
+
+	<!--- 外部リソース --->
+	<resources>
+	</resources>
+
+	<!-- テキスト情報 -->
+	<texts>
+		<!--タブフォント-->
+		<text:eden id="txt_sfnt_tab_sys" label="MSG_TAB_SYSTEM" region="spd_sfnt_tab_sys" font_size="14" align="center" valign="middle"/>
+		<text:eden id="txt_sfnt_tab_op" label="MSG_TPC_OPERATE" region="spd_sfnt_tab_op" font_size="14" align="center" valign="middle"/>
+		<text:eden id="txt_sfnt_tab_inf" label="MSG_TPC_INFO" region="spd_sfnt_tab_inf" font_size="14" align="center" valign="middle"/>
+		
+		<!--ボタンフォント-->
+		<text:eden id="txt_sfnt_btn_ini" label="MSG_TPC_INITIAL_SETTING" region="spd_sfnt_btn_ini" font_size="14" align="center" valign="middle"/>
+		<text:eden id="txt_sfnt_btn_ok" label="MSG_BTN_OK" region="spd_sfnt_btn_ok" font_size="14" align="center" valign="middle"/>
+		<text:eden id="txt_sfnt_btn_can" label="MSG_BTN_CANCEL" region="spd_sfnt_btn_can" font_size="14" align="center" valign="middle"/>
+		
+	</texts>
+</menu>
